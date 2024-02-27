@@ -1,0 +1,7 @@
+{
+   "EMS" : [
+    {"id":1, "region":"mongol"},
+    {"id":2, "region":"japan"},
+    {"id":3, "region":"kimcheon"}
+   ]
+}
