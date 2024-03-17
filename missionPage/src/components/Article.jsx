@@ -5,6 +5,7 @@ import { Japan1 } from "./japan/Japan1";
 import { Kimcheon1 } from "./korea/Kimcheon1";
 import { Ansan1 } from "./korea/Ansan1";
 import { RollingBanner } from "./RollingBanner";
+import { Ilsan1 } from "./korea/Ilsan1";
 
 const Wrap = styled.div`
   display: flex;
@@ -40,6 +41,11 @@ const Article = ({ selectedItem }) => {
         {selectedItem === "4" && (
           <>
             <Ansan1 />
+          </>
+        )}
+        {selectedItem === "5" && (
+          <>
+            <Ilsan1 />
           </>
         )}
       </Wrap>
