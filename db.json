@@ -1,7 +1,8 @@
 {
    "EMS" : [
-    {"id":1, "region":"mongol"},
-    {"id":2, "region":"japan"},
-    {"id":3, "region":"kimcheon"}
+    {"id":1, "region":"몽골"},
+    {"id":2, "region":"일본"},
+    {"id":3, "region":"김천"},
+    {"id":4, "region":"안산"}
    ]
 }
