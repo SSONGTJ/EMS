@@ -32,7 +32,7 @@ const RollingBanner = () => {
     <div
       style={{
         maxWidth: "100%",
-        margin: "20px 0",
+        padding: "0 20px",
       }}
     >
       <div
@@ -53,6 +53,7 @@ const RollingBanner = () => {
               borderRadius: "10px",
               display: "flex",
               alignItems: "center",
+              padding: "30px 0",
             }}
             onMouseOver={() => {
               if (scrollRef.current) {
