@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const JapanImg = () => {
   const images = [
-    { url: "./src/img/japan/img01.jpg", alt: "Image 1" },
+    { url: "./src/img/japan/img01.jpg", alt: "Image 1", text: "" },
     { url: "./src/img/japan/img02.jpg", alt: "Image 2" },
     { url: "./src/img/japan/img03.jpg", alt: "Image 3" },
     { url: "./src/img/japan/img04.jpg", alt: "Image 4" },
@@ -39,17 +39,19 @@ const JapanImg = () => {
 
   const [modalAnc, setModalAnc] = useState(null);
   const [modalImgUrl, setModalImgUrl] = useState(null);
+  const [imgText, setImageText] = useState(null);
   const openImgModal = Boolean(modalAnc);
 
-  const handleOpenModal = (imgUrl) => {
+  const handleOpenModal = (imgUrl, text) => {
     setModalAnc(true);
+    setImageText(text);
     setModalImgUrl(imgUrl);
   };
   const handleCloseModal = () => {
     setModalAnc(null);
+    setImageText(null);
     setModalImgUrl(null);
   };
-
   const Title = styled.h3`
     text-align: center;
   `;
@@ -125,7 +127,7 @@ const JapanImg = () => {
                   margin: "0 10px",
                   borderRadius: "5px",
                 }}
-                onClick={() => handleOpenModal(image.url)}
+                onClick={() => handleOpenModal(image.url, image.text)}
               />
             </div>
           ))}
@@ -152,14 +154,17 @@ const JapanImg = () => {
           borderRadius: "5px",
         }}
       >
-        <img
-          src={modalImgUrl}
-          onClick={(e) => e.stopPropagation()}
-          style={{
-            width: "100%",
-            borderRadius: "5px",
-          }}
-        />
+        <div>
+          <img
+            src={modalImgUrl}
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: "100%",
+              borderRadius: "5px",
+            }}
+          />
+          <p style={{ textAlign: "center", margin: "10px 0" }}>{imgText}</p>
+        </div>
       </Popover>
     </>
   );

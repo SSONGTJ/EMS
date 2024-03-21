@@ -3,6 +3,7 @@
     {"id":1, "region":"몽골"},
     {"id":2, "region":"일본"},
     {"id":3, "region":"김천"},
-    {"id":4, "region":"안산"}
+    {"id":4, "region":"안산"},
+    {"id":5, "region":"일산"}
    ]
 }
