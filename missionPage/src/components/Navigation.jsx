@@ -4,6 +4,13 @@ import styled from "styled-components";
 import { axiosClient } from "../util/axiosClient";
 import { PropTypes } from "prop-types";
 
+const MenuList = styled(List)`
+  display: flex;
+`;
+const MenuItem = styled(ListItem)`
+  cursor: pointer;
+`;
+
 const Navigation = ({ region, setRegion, setSelectedItem }) => {
   useEffect(() => {
     getList();
@@ -16,15 +23,8 @@ const Navigation = ({ region, setRegion, setSelectedItem }) => {
   };
 
   const handleItemClick = (id) => {
-    setSelectedItem(id);
+    setSelectedItem(Number(id));
   };
-
-  const MenuList = styled(List)`
-    display: flex;
-  `;
-  const MenuItem = styled(ListItem)`
-    cursor: pointer;
-  `;
 
   return (
     <>

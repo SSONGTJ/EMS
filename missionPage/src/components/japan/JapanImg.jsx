@@ -2,6 +2,9 @@ import { Popover } from "@mui/material";
 import { useRef, useState } from "react";
 import styled from "styled-components";
 
+const Title = styled.h3`
+  text-align: center;
+`;
 const JapanImg = () => {
   const images = [
     { url: "./src/img/japan/img01.jpg", alt: "Image 1", text: "" },
@@ -52,9 +55,6 @@ const JapanImg = () => {
     setImageText(null);
     setModalImgUrl(null);
   };
-  const Title = styled.h3`
-    text-align: center;
-  `;
   return (
     <>
       <div

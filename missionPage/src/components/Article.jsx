@@ -1,11 +1,10 @@
 import { styled } from "styled-components";
 import { PropTypes } from "prop-types";
-import { Mongol1 } from "./mongol/Mongol1";
-import { Japan1 } from "./japan/Japan1";
-import { Kimcheon1 } from "./korea/Kimcheon1";
-import { Ansan1 } from "./korea/Ansan1";
-import { RollingBanner } from "./RollingBanner";
-import { Ilsan1 } from "./korea/Ilsan1";
+import { MongolImg } from "./mongol/MongolImg";
+import { JapanImg } from "./japan/JapanImg";
+import { AnsanImg } from "./korea/AnsanImg";
+import { IlsanImg } from "./korea/IlsanImg";
+import { QnA } from "./QnA";
 
 const Wrap = styled.div`
   display: flex;
@@ -19,40 +18,33 @@ const Article = ({ selectedItem }) => {
   return (
     <>
       <Wrap>
-        <RollingBanner selectedItem={selectedItem} />
-
-        {selectedItem === "1" && (
+        {selectedItem === 1 && (
           <>
-            <Mongol1 />
+            <MongolImg />
           </>
         )}
 
-        {selectedItem === "2" && (
+        {selectedItem === 2 && (
           <>
-            <Japan1 />
+            <JapanImg />
           </>
         )}
-
-        {selectedItem === "3" && (
+        {selectedItem === 3 && (
           <>
-            <Kimcheon1 />
+            <AnsanImg />
           </>
         )}
-        {selectedItem === "4" && (
+        {selectedItem === 4 && (
           <>
-            <Ansan1 />
+            <IlsanImg />
           </>
         )}
-        {selectedItem === "5" && (
-          <>
-            <Ilsan1 />
-          </>
-        )}
+        <QnA selectedItem={selectedItem} />
       </Wrap>
     </>
   );
 };
 Article.propTypes = {
-  selectedItem: PropTypes.string.isRequired,
+  selectedItem: PropTypes.number.isRequired,
 };
 export { Article };

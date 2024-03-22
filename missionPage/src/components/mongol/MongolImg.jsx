@@ -2,6 +2,10 @@ import { Popover } from "@mui/material";
 import { useRef, useState } from "react";
 import styled from "styled-components";
 
+const Title = styled.h3`
+  text-align: center;
+`;
+
 const MongolImg = () => {
   const images = [
     {
@@ -105,9 +109,6 @@ const MongolImg = () => {
     setModalImgUrl(null);
   };
 
-  const Title = styled.h3`
-    text-align: center;
-  `;
   return (
     <>
       <div

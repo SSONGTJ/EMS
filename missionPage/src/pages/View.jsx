@@ -3,7 +3,7 @@ import { ViewHeader } from "../components/ViewHeader";
 import { Navigation } from "../components/Navigation";
 import { List } from "@mui/material";
 import { Article } from "../components/Article";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Article2 } from "../components/Article2";
 
 const Container = styled.div`
@@ -35,14 +35,8 @@ const Content = styled.div`
 `;
 
 const View = () => {
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(0);
   const [region, setRegion] = useState([]);
-
-  useEffect(() => {
-    if (selectedItem !== null) {
-      console.log("Selected : " + selectedItem);
-    }
-  }, [selectedItem]);
 
   return (
     <Container>

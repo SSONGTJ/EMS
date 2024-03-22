@@ -1,19 +1,19 @@
 import { Button } from "@mui/material";
 import { useState } from "react";
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 const Container = styled.div`
   display: flex;
 `;
 
-const Login = () => {
+const Login = ({ handleLogin }) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [isLogin, setIsLogin] = useState(false);
 
-  const handleLogin = () => {
+  const LoginAccess = () => {
     if (userName === "admin" && password === "emmaus1004") {
-      setIsLogin(true);
+      handleLogin(true);
     } else {
       alert("아이디나 비밀번호를 확인하세요!");
     }
@@ -35,8 +35,11 @@ const Login = () => {
           setPassword(e.target.value);
         }}
       />
-      <Button onClick={handleLogin}>로그인</Button>
+      <Button onClick={LoginAccess}>로그인</Button>
     </Container>
   );
+};
+Login.propTypes = {
+  handleLogin: PropTypes.func.isRequired,
 };
 export { Login };
