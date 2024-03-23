@@ -38,10 +38,12 @@ const View = () => {
   const [selectedItem, setSelectedItem] = useState(0);
   const [region, setRegion] = useState([]);
 
+  const [userName, setUserName] = useState("");
+
   return (
     <Container>
       <Nav>
-        <ViewHeader />
+        <ViewHeader userName={userName} setUserName={setUserName} />
         <MenuBar>
           <Navigation
             region={region}
@@ -51,7 +53,7 @@ const View = () => {
         </MenuBar>
       </Nav>
       <Content>
-        <Article selectedItem={selectedItem} />
+        <Article selectedItem={selectedItem} userName={userName} />
         <Article2 />
       </Content>
     </Container>

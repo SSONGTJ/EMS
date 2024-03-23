@@ -7,8 +7,7 @@ const Container = styled.div`
   display: flex;
 `;
 
-const Login = ({ handleLogin }) => {
-  const [userName, setUserName] = useState("");
+const Login = ({ handleLogin, userName, setUserName }) => {
   const [password, setPassword] = useState("");
 
   const LoginAccess = () => {
@@ -41,5 +40,7 @@ const Login = ({ handleLogin }) => {
 };
 Login.propTypes = {
   handleLogin: PropTypes.func.isRequired,
+  userName: PropTypes.string.isRequired,
+  setUserName: PropTypes.func.isRequired,
 };
 export { Login };

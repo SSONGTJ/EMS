@@ -19,35 +19,11 @@
   ],
   "Board": [
     {
-      "id": "1",
+      "id": 1,
       "region_id": 0,
       "region": "공통",
-      "name": "송태정",
-      "content": "테스트",
-      "comment": "관리자 답변"
-    },
-    {
-      "id": "2",
-      "region_id": 0,
-      "region": "공통",
-      "name": "송태정",
-      "content": "테스트",
-      "comment": "관리자의 답변~"
-    },
-    {
-      "id": "3",
-      "region_id": 1,
-      "region": "몽골",
-      "name": "송태정",
-      "content": "몽테",
-      "comment": "관리자의 답변"
-    },
-    {
-      "id": "4",
-      "region_id": 1,
-      "region": "몽골",
-      "name": "송태정",
-      "content": "몽테2"
+      "name": "gd",
+      "content": "gd"
     }
   ]
 }

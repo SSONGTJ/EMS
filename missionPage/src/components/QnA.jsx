@@ -10,11 +10,11 @@ const Wrap = styled.div`
   width: 100%;
 `;
 
-const QnA = ({ selectedItem }) => {
+const QnA = ({ selectedItem, userName }) => {
   return (
     <>
       <Wrap>
-      {selectedItem === 0 && (
+        {selectedItem === 0 && (
           <>
             <h2>공통 QnA</h2>
           </>
@@ -39,12 +39,13 @@ const QnA = ({ selectedItem }) => {
             <h2>일산 QnA</h2>
           </>
         )}
-        <QnAForm selectedItem={selectedItem} />
+        <QnAForm selectedItem={selectedItem} userName={userName} />
       </Wrap>
     </>
   );
 };
 QnA.propTypes = {
   selectedItem: PropTypes.number.isRequired,
+  userName: PropTypes.string.isRequired,
 };
 export { QnA };

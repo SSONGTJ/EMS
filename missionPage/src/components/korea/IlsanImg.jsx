@@ -9,79 +9,46 @@ const Title = styled.h3`
 const IlsanImg = () => {
   const images = [
     {
-      url: "./src/img/ansan/img00.jpg",
-      alt: "Image 0",
-      text: "내가 바로 나소영",
-    },
-    {
-      url: "./src/img/ansan/img01.jpg",
+      url: "./src/img/ilsan/img01.jpg",
       alt: "Image 1",
-      text: "물놀이",
+      text: "그림자",
     },
     {
-      url: "./src/img/ansan/img02.jpg",
+      url: "./src/img/ilsan/img02.jpg",
       alt: "Image 2",
-      text: "2023 안산 선교팀",
+      text: "아이들",
     },
     {
-      url: "./src/img/ansan/img03.jpg",
+      url: "./src/img/ilsan/img03.jpg",
       alt: "Image 3",
-      text: "동승혁",
+      text: "비교하지 않아요!",
     },
     {
-      url: "./src/img/ansan/img04.jpg",
+      url: "./src/img/ilsan/img04.jpg",
       alt: "Image 4",
-      text: "너네 되게 빡빡했구나",
+      text: "내 이름은 박서준",
     },
     {
-      url: "./src/img/ansan/img05.jpg",
+      url: "./src/img/ilsan/img05.jpg",
       alt: "Image 5",
-      text: "소개합니다! 안산의 아이들",
+      text: "이것은 무엇일까요?",
     },
     {
-      url: "./src/img/ansan/img06.jpg",
+      url: "./src/img/ilsan/img06.jpg",
       alt: "Image 6",
-      text: "달란트잔치..",
+      text: "단체샷",
     },
     {
-      url: "./src/img/ansan/img07.jpg",
+      url: "./src/img/ilsan/img07.jpg",
       alt: "Image 7",
-      text: "에코백 꾸미기 로 보여짐",
+      text: "일산 팀원",
     },
+  ];
+
+  const videos = [
     {
-      url: "./src/img/ansan/img08.jpg",
-      alt: "Image 8",
-      text: "에코백 꾸미기 로 보여짐2",
-    },
-    {
-      url: "./src/img/ansan/img09.jpg",
-      alt: "Image 9",
-      text: "에코백 꾸미기 로 보여짐3",
-    },
-    {
-      url: "./src/img/ansan/img10.jpg",
-      alt: "Image 10",
-      text: "기수가 왜 여기있지",
-    },
-    {
-      url: "./src/img/ansan/img11.jpg",
-      alt: "Image 11",
-      text: "원석이형은 왜 여기있지",
-    },
-    {
-      url: "./src/img/ansan/img12.jpg",
-      alt: "Image 12",
-      text: "밥!",
-    },
-    {
-      url: "./src/img/ansan/img13.jpg",
-      alt: "Image 13",
-      text: "비싼데요? 3달란트",
-    },
-    {
-      url: "./src/img/ansan/img14.jpg",
-      alt: "Image 14",
-      text: "공룡 가지고 놀 나이는 아닌데 말이지",
+      url: "./src/img/ilsan/ilsan_video.mp4",
+      alt: "선교 영상",
     },
   ];
 
@@ -124,21 +91,28 @@ const IlsanImg = () => {
         }}
       >
         <article>
-          <Title>안산 선교 소개</Title>
+          <Title>일산 선교 소개</Title>
           <br />
           <div>
-            안산선교는 경기도 안산시에 있는 다문화 아이들을 위해 여름 성경학교
-            사역을 진행합니다. 성경학교는 한국어가 서툰 아이들을 위해, 더욱 쉽게
-            접하고 배울 수 있도록 성경과 한국어 교육을 접목시킨 활동 위주로
-            진행됩니다. 비록 문화와 사용하는 언어는 다르지만, 그들과 하나되는
-            것에 장애물이 되진 않습니다. 선교지로 나아갈 때 그저 진심으로
-            선교지와 그들을 대하는 마음만 있다면 누구나 쓰임받을 수 있다는 것을
-            말씀드리고 싶습니다!
+            {videos.map((video, index) => (
+              <div key={index}>
+                <br />
+                <iframe
+                  width="100%"
+                  height="500"
+                  src={video.url}
+                  title={video.alt}
+                  frameBorder="0"
+                  allow="fullscreen"
+                  allowFullScreen
+                />
+              </div>
+            ))}
           </div>
         </article>
 
         <br />
-        <Title>안산 사진 ( 클릭하시면 크게 볼 수 있어요! )</Title>
+        <Title>일산 사진 ( 클릭하시면 크게 볼 수 있어요! )</Title>
         <div
           style={{
             display: "flex",

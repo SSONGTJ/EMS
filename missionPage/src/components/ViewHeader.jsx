@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Login } from "../pages/Login";
 import { Button, Popover } from "@mui/material";
 import { useState } from "react";
+import { PropTypes } from "prop-types";
 
 const Title = styled.h1`
   margin-top: 20px;
@@ -15,7 +16,7 @@ const LoginButton = styled(Button)`
   right: 0;
 `;
 
-const ViewHeader = () => {
+const ViewHeader = ({ userName, setUserName }) => {
   const [isLogin, setIsLogin] = useState(false);
   const handleLogin = (status) => {
     setIsLogin(status);
@@ -70,9 +71,18 @@ const ViewHeader = () => {
           padding: "20px",
         }}
       >
-        <Login isLogin={isLogin} handleLogin={handleLogin} />
+        <Login
+          isLogin={isLogin}
+          handleLogin={handleLogin}
+          userName={userName}
+          setUserName={setUserName}
+        />
       </Popover>
     </>
   );
+};
+ViewHeader.propTypes = {
+  userName: PropTypes.string.isRequired,
+  setUserName: PropTypes.func.isRequired,
 };
 export { ViewHeader };

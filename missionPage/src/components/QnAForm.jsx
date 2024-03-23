@@ -37,7 +37,7 @@ const FormInput = styled(Input)`
   width: 60%;
 `;
 
-const QnAForm = ({ selectedItem }) => {
+const QnAForm = ({ selectedItem, userName }) => {
   const [name, setName] = useState("");
   const [count, setCount] = useState(1);
   const [qnaId, setQnaId] = useState(0);
@@ -123,7 +123,15 @@ const QnAForm = ({ selectedItem }) => {
     }
   };
 
-  const deleteQna = () => {};
+  const deleteOne = async (e, id) => {
+    e.preventDefault();
+    try {
+      await axiosClient.delete(`/Board/${id}`);
+      getQnaList();
+    } catch (error) {
+      alert("삭제 실패");
+    }
+  };
 
   return (
     <>
@@ -190,9 +198,23 @@ const QnAForm = ({ selectedItem }) => {
                     >
                       {item.content}
                     </TableCell>
-                    <TableCell>
-                      <Button onClick={deleteQna}>삭제</Button>
-                    </TableCell>
+                    {userName === "admin" ? (
+                      <>
+                        <TableCell>
+                          <Button onClick={(e) => deleteOne(e, item.id)}>
+                            삭제
+                          </Button>
+                        </TableCell>
+                      </>
+                    ) : (
+                      <>
+                        <TableCell>
+                          <Button
+                            onClick={(e) => deleteOne(e, item.id)}
+                          ></Button>
+                        </TableCell>
+                      </>
+                    )}
                   </TableRow>
                   {item.comment && (
                     <>
@@ -269,5 +291,9 @@ const QnAForm = ({ selectedItem }) => {
       </Popover>
     </>
   );
+};
+QnAForm.propTypes = {
+  selectedItem: PropTypes.number.isRequired,
+  userName: PropTypes.string.isRequired,
 };
 export { QnAForm };

@@ -14,7 +14,7 @@ const Wrap = styled.div`
   width: 100%;
 `;
 
-const Article = ({ selectedItem }) => {
+const Article = ({ selectedItem, userName }) => {
   return (
     <>
       <Wrap>
@@ -39,12 +39,13 @@ const Article = ({ selectedItem }) => {
             <IlsanImg />
           </>
         )}
-        <QnA selectedItem={selectedItem} />
+        <QnA selectedItem={selectedItem} userName={userName} />
       </Wrap>
     </>
   );
 };
 Article.propTypes = {
   selectedItem: PropTypes.number.isRequired,
+  userName: PropTypes.string.isRequired,
 };
 export { Article };
