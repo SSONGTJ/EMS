@@ -7,7 +7,8 @@ const Title = styled.h3`
 `;
 const JapanImg = () => {
   const images = [
-    { url: "./src/img/japan/img01.jpg", alt: "Image 1", text: "" },
+    { url: "./src/img/japan/img00.jpg", alt: "Image 0" },
+    { url: "./src/img/japan/img01.jpg", alt: "Image 1" },
     { url: "./src/img/japan/img02.jpg", alt: "Image 2" },
     { url: "./src/img/japan/img03.jpg", alt: "Image 3" },
     { url: "./src/img/japan/img04.jpg", alt: "Image 4" },
@@ -65,20 +66,7 @@ const JapanImg = () => {
       >
         <div>
           <Title>일본 선교 영상</Title>
-          {videos.map((video, index) => (
-            <div key={index}>
-              <br />
-              <iframe
-                width="100%"
-                height="500"
-                src={video.url}
-                title={video.alt}
-                frameBorder="0"
-                allow="autoplay; fullscreen"
-                allowFullScreen
-              />
-            </div>
-          ))}
+          <div>준비 중</div>
         </div>
         <br />
         <Title>일본 사진 ( 클릭하시면 크게 볼 수 있어요! )</Title>
@@ -120,13 +108,14 @@ const JapanImg = () => {
                 src={image.url}
                 alt={image.alt}
                 style={{
-                  width: "400px",
-                  height: "500px",
+                  width: "300px",
+                  height: "400px",
                   scrollSnapAlign: "center",
                   cursor: "pointer",
                   margin: "0 10px",
                   borderRadius: "5px",
                 }}
+                loading="lazy"
                 onClick={() => handleOpenModal(image.url, image.text)}
               />
             </div>

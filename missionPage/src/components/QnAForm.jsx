@@ -51,7 +51,7 @@ const QnAForm = ({ selectedItem, userName }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axiosClient.post("/Board", {
+      await axiosClient.post(`/board`, {
         id: count,
         region_id: selectedItem,
         region: region,
@@ -85,6 +85,9 @@ const QnAForm = ({ selectedItem, userName }) => {
       case 4:
         setRegion("일산");
         break;
+      case 5:
+        setRegion("김천");
+        break;
       default:
         break;
     }
@@ -92,7 +95,7 @@ const QnAForm = ({ selectedItem, userName }) => {
   }, [selectedItem, region]);
 
   const getQnaList = async () => {
-    const response = await axiosClient.get("/Board");
+    const response = await axiosClient.get("/board");
     setQnaList(response.data);
   };
 
@@ -112,7 +115,7 @@ const QnAForm = ({ selectedItem, userName }) => {
   const handleAnswer = async (e) => {
     e.preventDefault();
     try {
-      await axiosClient.patch(`/Board/${qnaId}`, {
+      await axiosClient.patch(`/board/${qnaId}`, {
         comment: comment,
       });
       getQnaList();
@@ -126,7 +129,7 @@ const QnAForm = ({ selectedItem, userName }) => {
   const deleteOne = async (e, id) => {
     e.preventDefault();
     try {
-      await axiosClient.delete(`/Board/${id}`);
+      await axiosClient.delete(`/board/${id}`);
       getQnaList();
     } catch (error) {
       alert("삭제 실패");

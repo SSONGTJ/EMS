@@ -18,7 +18,7 @@ const Cont = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 36px;
+  font-size: 30px;
   & > p {
     margin: 15px 0;
   }

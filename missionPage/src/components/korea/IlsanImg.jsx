@@ -158,6 +158,7 @@ const IlsanImg = () => {
                   margin: "0 10px",
                   borderRadius: "5px",
                 }}
+                loading="lazy"
                 onClick={() => handleOpenModal(image.url, image.text)}
               />
             </div>

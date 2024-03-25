@@ -17,7 +17,7 @@ const Navigation = ({ region, setRegion, setSelectedItem }) => {
   }, []);
 
   const getList = async () => {
-    await axiosClient.get("/EMS").then((res) => {
+    await axiosClient.get("/regionList").then((res) => {
       setRegion(res.data);
     });
   };

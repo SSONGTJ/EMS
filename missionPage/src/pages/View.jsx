@@ -39,7 +39,6 @@ const View = () => {
   const [region, setRegion] = useState([]);
 
   const [userName, setUserName] = useState("");
-
   return (
     <Container>
       <Nav>

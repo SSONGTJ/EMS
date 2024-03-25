@@ -9,8 +9,7 @@ const Container = styled.div`
 
 const Login = ({ handleLogin, userName, setUserName }) => {
   const [password, setPassword] = useState("");
-
-  const LoginAccess = () => {
+  const handleLoginForm = () => {
     if (userName === "admin" && password === "emmaus1004") {
       handleLogin(true);
     } else {
@@ -20,21 +19,24 @@ const Login = ({ handleLogin, userName, setUserName }) => {
 
   return (
     <Container>
-      <input
-        type="text"
-        placeholder="userName"
-        value={userName}
-        onChange={(e) => setUserName(e.target.value)}
-      />
-
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      />
-      <Button onClick={LoginAccess}>로그인</Button>
+      <form onSubmit={handleLoginForm}>
+        <input
+          type="text"
+          placeholder="userName"
+          value={userName}
+          onChange={(e) => {
+            setUserName(e.target.value);
+          }}
+        />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+        <Button type="submit">로그인</Button>
+      </form>
     </Container>
   );
 };
