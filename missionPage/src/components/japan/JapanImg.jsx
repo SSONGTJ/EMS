@@ -22,7 +22,7 @@ const JapanImg = () => {
 
   const videos = [
     {
-      url: "https://www.youtube.com/embed/u-G1aKFP-08?si=ZHHA10D0L2ixjXN_&amp;controls=0",
+      url: "",
       alt: "선교 영상",
     },
   ];
@@ -109,7 +109,7 @@ const JapanImg = () => {
                 alt={image.alt}
                 style={{
                   width: "300px",
-                  height: "400px",
+                  height: "300px",
                   scrollSnapAlign: "center",
                   cursor: "pointer",
                   margin: "0 10px",

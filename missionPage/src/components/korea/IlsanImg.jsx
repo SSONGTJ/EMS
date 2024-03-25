@@ -151,8 +151,8 @@ const IlsanImg = () => {
                 src={image.url}
                 alt={image.alt}
                 style={{
-                  width: "400px",
-                  height: "500px",
+                  width: "300px",
+                  height: "300px",
                   scrollSnapAlign: "center",
                   cursor: "pointer",
                   margin: "0 10px",

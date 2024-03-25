@@ -39,6 +39,11 @@ const QnA = ({ selectedItem, userName }) => {
             <h2>일산 QnA</h2>
           </>
         )}
+        {selectedItem === 5 && (
+          <>
+            <h2>김천 QnA</h2>
+          </>
+        )}
         <QnAForm selectedItem={selectedItem} userName={userName} />
       </Wrap>
     </>

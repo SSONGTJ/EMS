@@ -278,19 +278,27 @@ const QnAForm = ({ selectedItem, userName }) => {
         }}
         PaperProps={{ style: { maxWidth: "80%", width: "fit-content" } }}
       >
-        <>
-          <FormWrap
-            style={{ width: "auto", margin: "0", padding: "5px 10px" }}
-            onSubmit={handleAnswer}
-          >
-            <FormLabel>답변 :</FormLabel>
-            <FormInput
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-            />
-            <Button type="submit">답변 달기</Button>
-          </FormWrap>
-        </>
+        {userName === "admin" ? (
+          <>
+            <FormWrap
+              style={{ width: "auto", margin: "0", padding: "5px 10px" }}
+              onSubmit={handleAnswer}
+            >
+              <FormLabel>답변 :</FormLabel>
+              <FormInput
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+              />
+              <Button type="submit">답변 달기</Button>
+            </FormWrap>
+          </>
+        ) : (
+          <>
+            <div style={{ padding: "20px" }}>
+              답변을 달기위해 관리자로 로그인 바랍니다!
+            </div>
+          </>
+        )}
       </Popover>
     </>
   );

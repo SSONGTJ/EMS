@@ -5,6 +5,7 @@ import { JapanImg } from "./japan/JapanImg";
 import { AnsanImg } from "./korea/AnsanImg";
 import { IlsanImg } from "./korea/IlsanImg";
 import { QnA } from "./QnA";
+import { KimcheonImg } from "./korea/KimcheonImg";
 
 const Wrap = styled.div`
   display: flex;
@@ -37,6 +38,11 @@ const Article = ({ selectedItem, userName }) => {
         {selectedItem === 4 && (
           <>
             <IlsanImg />
+          </>
+        )}
+        {selectedItem === 5 && (
+          <>
+            <KimcheonImg />
           </>
         )}
         <QnA selectedItem={selectedItem} userName={userName} />
