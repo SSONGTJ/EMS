@@ -211,11 +211,7 @@ const QnAForm = ({ selectedItem, userName }) => {
                       </>
                     ) : (
                       <>
-                        <TableCell>
-                          <Button
-                            onClick={(e) => deleteOne(e, item.id)}
-                          ></Button>
-                        </TableCell>
+                        <TableCell></TableCell>
                       </>
                     )}
                   </TableRow>
@@ -295,7 +291,7 @@ const QnAForm = ({ selectedItem, userName }) => {
         ) : (
           <>
             <div style={{ padding: "20px" }}>
-              답변을 달기위해 관리자로 로그인 바랍니다!
+              답변을 달려면 관리자로 로그인 바랍니다!
             </div>
           </>
         )}
